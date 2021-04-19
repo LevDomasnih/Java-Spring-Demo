@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component
 public class MusicPlayer {
 
     @Value("${musicPlayer.name}")
@@ -33,10 +32,8 @@ public class MusicPlayer {
         this.volume = volume;
     }
 
-    @Autowired
-    public MusicPlayer(ClassicalMusic classicalMusic, RapMusic rapMusic, RockMusic rockMusic) {
+    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
         this.classicalMusic = classicalMusic;
-        this.rapMusic = rapMusic;
         this.rockMusic = rockMusic;
     }
 
